@@ -8,7 +8,7 @@ function Page2() {
   const [positionX, setPositionX] = useState(50)
   useEffect(() => {
     window.api.onMousePositionGet((_, PositionX) => {
-      setPositionX(PositionX * 100)
+      setPositionX(PositionX)
     })
   }, [])
   return (

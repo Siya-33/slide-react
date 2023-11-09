@@ -4,17 +4,18 @@ import video1 from '../assets/public/video1.mp4'
 import video2 from '../assets/public/video2.mp4'
 
 function Page1() {
-  const handleMouseMove = (event) => {
-    const mouseX = event.clientX
-    const screenWidth = window.innerWidth
-    const normalizedX = mouseX / screenWidth
-    window.api.sendMousePosition(normalizedX)
-  }
+  // const handleMouseMove = (event) => {
+  //   const mouseX = event.clientX
+  //   const screenWidth = window.innerWidth
+  //   const normalizedX = mouseX / screenWidth * 100
+  //   window.api.sendMousePosition(normalizedX)
+  // }
   return (
   <>
     <ReactCompareSlider
     changePositionOnHover
-    onMouseMove={handleMouseMove}
+    // onMouseMove={handleMouseMove}
+    onPositionChange={position => window.api.sendMousePosition(position)}
       itemOne={<video
         playsInline
         autoPlay
